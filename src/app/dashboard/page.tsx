@@ -44,7 +44,7 @@ const Dashboard = () => {
       const clientConn = mqtt.connect("wss://broker.hivemq.com/mqtt", {
         log: console.log.bind(console),
         keepalive: 30,
-        port: 8000,
+        port: 8884,
       });
       clientConn.on("connect", () => {
         console.log("connected");
