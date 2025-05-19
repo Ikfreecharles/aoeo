@@ -1,12 +1,9 @@
-# syntax=docker.io/docker/dockerfile:1
-
 FROM node:23-alpine
 
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package*.json ./
-RUN npm install
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \

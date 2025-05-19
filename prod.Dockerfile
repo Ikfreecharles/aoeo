@@ -1,6 +1,4 @@
-# syntax=docker.io/docker/dockerfile:1
-
-FROM node:18-alpine AS base
+FROM node:23-alpine AS base
 
 # Step 1. Rebuild the source code only when needed
 FROM base AS builder
@@ -22,6 +20,7 @@ COPY src ./src
 COPY public ./public
 COPY next.config.js .
 COPY tsconfig.json .
+COPY postcss.config.mjs .
 
 # Environment variables must be present at build time
 # https://github.com/vercel/next.js/discussions/14030
