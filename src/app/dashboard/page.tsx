@@ -27,7 +27,8 @@ const Dashboard = () => {
   const [schedules, setSchedules] = useState<Array<ScheduleInterface>>([]);
 
   useEffect(() => {
-    if (client) {
+    if (typeof window === "undefined") return;
+    else if (client) {
       console.log(client);
       client.on("connect", () => {
         console.log("Connected");
