@@ -41,10 +41,10 @@ const Dashboard = () => {
         console.log("Reconnecting");
       });
     } else {
-      const clientConn = mqtt.connect("ws://broker.hivemq.com/mqtt", {
+      const clientConn = mqtt.connect("wss://broker.hivemq.com/mqtt", {
         log: console.log.bind(console),
         keepalive: 30,
-        port: 8000,
+        port: 8001,
       });
       clientConn.on("connect", () => {
         console.log("connected");
